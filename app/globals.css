@@ -123,4 +123,23 @@ footer {
   font-weight: bold;
   color: #1E40AF;
 }
+img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.img-car {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+
 
