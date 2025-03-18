@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <p>Ronaldo Silva.© 2025 Todos os direitos reservados.</p>
+      <p>Concessionaria Fiap. Todos os direitos reservados.</p>
     </footer>
   );
 };

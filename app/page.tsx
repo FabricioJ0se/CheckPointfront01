@@ -7,16 +7,8 @@ export default function Home() {
     <>
       <Header />
       <div className="text-center home-container"> 
-        <h1 className="text-3xl font-semibold mb-2">Bem-vindo à Elite Motors</h1>
-        <p className="text-lg mb-4">A melhor seleção de carros de luxo para você.</p>
-        <div className="mt-8 flex justify-center">
-          <img
-            src="/Image/1663674828_ferrari_purosangue_suv_uvod-32532628.jpg"
-            className="mx-auto max-w-full rounded-lg"
-            style={{ maxWidth: "800px" }}
-            alt="Carro de luxo"
-          />
-        </div>
+        <h1 className="text-3xl font-semibold mb-2">Concessionaria Fiap</h1>
+        <p className="text-lg mb-4">O local perfeito para escolher seu Carro</p>
       </div>
       <Footer />
     </>

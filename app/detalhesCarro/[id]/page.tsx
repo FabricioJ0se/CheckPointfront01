@@ -1,43 +1,37 @@
-import carrosData from "@/data/carrosData";
-import Footer from '@/components/Footer';
+"use client"; 
+
+import { useParams } from 'next/navigation';
+import { carrosData } from '@/data/carrosData';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
-export default function DetalhesCarro({ params }: { params: { id: string } }) {
-  const carro = carrosData.find((c) => c.id.toString() === params.id);
+const DetalhesCarro = () => {
+  const { id } = useParams(); 
 
-  if (!carro)
-    return (
-      <p style={{ textAlign: "center", color: "red" }}>Carro não encontrado!</p>
-    );
+  const carro = carrosData.find((carro) => carro.id.toString() === id);
+
+  if (!carro) {
+    return <div>Carro não encontrado.</div>;
+  }
 
   return (
     <>
-      <Header /> 
-      <div
-        className="card"
-        style={{
-          padding: "20px",
-          border: "1px solid #ddd",
-          borderRadius: "8px",
-          maxWidth: "600px",
-          margin: "20px auto",
-        }}
-      >
+      <Header />
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
         <img
-          src={carro.foto}
+          src={`/img/${carro.img}`}
           alt={carro.modelo}
-          style={{ width: "100%", borderRadius: "8px", marginBottom: "15px" }}
+          style={{ width: '100%', height: '20rem', objectFit: 'cover', borderRadius: '0.5rem' }}
         />
-        <h2 style={{ fontSize: "24px", marginBottom: "10px" }}>
-          {carro.modelo}
-        </h2>
-        <p style={{ marginBottom: "8px" }}>Ano: {carro.ano}</p>
-        <p style={{ marginBottom: "8px" }}>Potência: {carro.potencia}</p>
-        <p style={{ marginBottom: "8px" }}>
-          <strong>Preço: R$ {carro.preco.toLocaleString()}</strong>
-        </p>
+        <h2>{carro.modelo}</h2>
+        <p><strong>Ano:</strong> {carro.ano}</p>
+        <p><strong>Especificações:</strong> {carro.especificacoes}</p>
+        <p><strong>Preço:</strong> {carro.preco}</p>
+        <p><strong>Quantidade disponível:</strong> {carro.quantidade}</p>
       </div>
       <Footer />
     </>
   );
-}
+};
+
+export default DetalhesCarro;
